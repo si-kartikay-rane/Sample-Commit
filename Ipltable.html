@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IPL Standings 2023</title>
+    <link rel="icon" type="image/x-icon" href="ipl-blue-removebg-preview.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <style>
+      /* styles.css */
+
+      body {
+        background-color: #333;
+        color: black;
+      }
+
+      .points-table {
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: 0;
+      }
+
+      .points-table th,
+      .points-table td {
+        padding: 12px;
+        text-align: center;
+        font-weight: bold;
+        color: black;
+      }
+
+      .points-table th {
+        background-color: #7994df;
+      }
+
+    .points-table tbody tr:nth-child(odd) {
+        background-color: #65d4ff;
+      }
+
+      .points-table tbody tr:nth-child(even) {
+        background-color: #ffffff;
+      }
+
+      .points-table tbody tr:hover {
+        background-color: #333;
+      }
+
+      .points-table tbody tr th,
+      .points-table tbody tr td {
+        border-top: 1px solid #555;
+      }
+
+      .points-table tbody tr:last-child td {
+        border-bottom: 1px solid #555;
+      }
+
+      .points-table tbody tr th:first-child,
+      .points-table tbody tr td:first-child {
+        border-left: 1px solid #555;
+        border-radius: 5px 0 0 5px;
+      }
+
+      .points-table tbody tr th:last-child,
+      .points-table tbody tr td:last-child {
+        border-right: 1px solid #555;
+        border-radius: 0 5px 5px 0;
+      }
+
+      .qaulify {
+        color: #4f91cd;
+        padding-left: 5px;
+      }
+
+      .win {
+        color: #28a745;
+        padding: 2px;
+      }
+
+      .loss {
+        color: #dc3545;
+        padding: 4px;
+      }
+
+      .draw {
+        color: gray;
+        padding: 2px;
+      }
+      .team-info {
+        display: flex;
+        align-items: center;
+      }
+
+      .team-info img {
+        margin-right: 5px;
+      }
+      .col-md-6, .row, .container{
+        background-image: linear-gradient(rgb(255, 143, 83),rgb(255, 255, 166),rgb(255, 143, 83));
+      }
+      
+    </style>
+  </head>
+  <body>
+    <div style="background-color: white">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <img src="ipl-blue-removebg-preview.png" height="70" />
+          </div>
+          <div class="col-md-6">
+            <h1
+              style="
+                text-align: right;
+                font-family: 'Roboto Slab', serif;
+                color: #19388a;
+                margin-bottom: 30px;
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+                height: 100%;
+                margin: 0;
+                background-image: linear-gradient(rgb(255, 143, 83),rgb(255, 255, 166),rgb(255, 143, 83));
+              "
+            >
+              STANDINGS 2023
+            </h1>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <br /><br />
+    <table class="points-table">
+      <thead>
+        <tr>
+          <th scope="col" bgcolor="bg-blue"><b>POS</b></th>
+          <th scope="col" bgcolor="bg-blue">TEAM</th>
+          <th scope="col" bgcolor="bg-blue">P</th>
+          <th scope="col" bgcolor="bg-blue">W</th>
+          <th scope="col" bgcolor="bg-blue">L</th>
+          <th scope="col" bgcolor="bg-blue">NR</th>
+          <th scope="col" bgcolor="bg-blue">NRR</th>
+          <th scope="col" bgcolor="bg-blue">FOR</th>
+          <th scope="col" bgcolor="bg-blue">AGAINST</th>
+          <th scope="col" bgcolor="bg-blue">PTS</th>
+          <th scope="col" bgcolor="bg-blue">Recent Form</th>
+        </tr>
+      </thead>
+      <tbody id="myTable">
+        <!-- Table body content will be generated dynamically -->
+      </tbody>
+    </table>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+      var myArray = [
+        {
+          POS: 1,
+          TEAM: "GT",
+          P: 14,
+          W: 10,
+          L: 4,
+          NR: 0,
+          NRR: 0.809,
+          FOR: "2450/268.1",
+          AGAINST: "2326/279.2",
+          PTS: 20,
+          RecentForm: "WWWLW",
+        },
+        {
+          POS: 2,
+          TEAM: "CSK",
+          P: 14,
+          W: 8,
+          L: 5,
+          NR: 1,
+          NRR: 0.652,
+          FOR: "2369/254.3",
+          AGAINST: "2232/257.5",
+          PTS: 17,
+          RecentForm: "WLWWN",
+        },
+        {
+          POS: 3,
+          TEAM: "LSG",
+          P: 14,
+          W: 8,
+          L: 5,
+          NR: 1,
+          NRR: 0.284,
+          FOR: "2253/255.2",
+          AGAINST: "2216/259.3",
+          PTS: 17,
+          RecentForm: "WWWLN",
+        },
+        {
+          POS: 4,
+          TEAM: "MI",
+          P: 14,
+          W: 8,
+          L: 6,
+          NR: 0,
+          NRR: -0.044,
+          FOR: "2592/270.3",
+          AGAINST: "2620/272.1",
+          PTS: 16,
+          RecentForm: "WLWWL",
+        },
+        {
+          POS: 5,
+          TEAM: "RR",
+          P: 14,
+          W: 7,
+          L: 7,
+          NR: 0,
+          NRR: 0.148,
+          FOR: "2419/272.1",
+          AGAINST: "2389/273.2",
+          PTS: 14,
+          RecentForm: "WLWLL",
+        },
+        {
+          POS: 6,
+          TEAM: "RCB",
+          P: 14,
+          W: 7,
+          L: 7,
+          NR: 0,
+          NRR: 0.135,
+          FOR: "2502/275.4",
+          AGAINST: "2435/272.2",
+          PTS: 14,
+          RecentForm: "LWWLL",
+        },
+        {
+          POS: 7,
+          TEAM: "KKR",
+          P: 14,
+          W: 6,
+          L: 8,
+          NR: 0,
+          NRR: -0.239,
+          FOR: "2463/274.3",
+          AGAINST: "2432/264.0",
+          PTS: 12,
+          RecentForm: "LWLWW",
+        },
+        {
+          POS: 8,
+          TEAM: "PBKS",
+          P: 14,
+          W: 6,
+          L: 8,
+          NR: 0,
+          NRR: -0.304,
+          FOR: "2518/275.3",
+          AGAINST: "2564/271.3",
+          PTS: 12,
+          RecentForm: "LLWL",
+        },
+        {
+          POS: 9,
+          TEAM: "DC",
+          P: 14,
+          W: 5,
+          L: 9,
+          NR: 0,
+          NRR: -0.808,
+          FOR: "2182/276.0",
+          AGAINST: "2424/278.1",
+          PTS: 10,
+          RecentForm: "LWLLW",
+        },
+        {
+          POS: 10,
+          TEAM: "SRH",
+          P: 14,
+          W: 4,
+          L: 10,
+          NR: 0,
+          NRR: -0.59,
+          FOR: "2376/277.1",
+          AGAINST: "2486/271.2",
+          PTS: 8,
+          RecentForm: "LLLWL",
+        },
+
+        // Add more data here if needed...
+      ];
+
+      buildTable(myArray);
+
+      function buildTable(data) {
+        var tableBody = $("#myTable");
+
+        for (var i = 0; i < data.length; i++) {
+          var row = `
+          <tr>
+            <td>${data[i].POS}</td>
+			<td>
+			<div class="team-info">
+				
+                <span><img src="${data[i].TEAM}.png" width="25" height="25" /></span>
+                <span>${data[i].TEAM}</span>
+              </div>
+			  </td>
+            <td>${data[i].P}</td>
+            <td>${data[i].W}</td>
+            <td>${data[i].L}</td>
+            <td>${data[i].NR}</td>
+            <td>${data[i].NRR}</td>
+            <td>${data[i].FOR}</td>
+            <td>${data[i].AGAINST}</td>
+            <td>${data[i].PTS}</td>
+            <td>${data[i].RecentForm}</td>
+          </tr>
+        `;
+          tableBody.append(row);
+        }
+      }
+    </script>
+  </body>
+</html>
